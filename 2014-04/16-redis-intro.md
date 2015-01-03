@@ -21,7 +21,7 @@ Redis是一个偏重于in-memory的key-value数据库，这样讲有点儿不准
 为了运行Redis服务，我们需要下载源码，编译，安装Redis。Redis推荐从源代码安装Redis，这样能保证安装到最新版本的Redis。
 我是在Windows上测试Redis，所以讲下Windows下的编译安装，如果你不想自己编译，可以直接下载编辑好的Win32或Win64编译好的版本。
 
-首先，从https://github.com/MSOpenTech/redis下载源代码，直接“download as ZIP”。
+首先，从`https://github.com/MSOpenTech/redis`下载源代码，直接“download as ZIP”。
 如果你不想自己编译，直接使用redis-2.6/bin/release下的编译好的可执行文件。编译过程也十分简单，
 用VS2010打开redis-2.6/msvs/RedisServer.sln,然后直接编译，不出意外，
 你就可以从msvs的Debug或者Release目录(根据你的编译选项)找到编译好的可执行文件。我们来看看这些编译好的可执行文件和这些文件的功能。
