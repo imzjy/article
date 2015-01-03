@@ -27,12 +27,13 @@ def markdown_to_html(markdown_files):
 
         #create folder
         dest_folder = os.path.join(OUTPUT_DIR, path)
-        print dest_folder
+        # print dest_folder
         if not os.path.exists(dest_folder):
             os.mkdir(dest_folder)
 
         #convert
         src_full_name = os.path.join(path, name)
+        print 'processing:' + src_full_name
         dest_full_name = os.path.join(dest_folder, name).rstrip('.md') + '.html'
         with codecs.open(src_full_name, mode='r', encoding="utf-8") as src, \
             codecs.open(dest_full_name, 'w', 'utf-8') as dest:
@@ -40,7 +41,7 @@ def markdown_to_html(markdown_files):
             md_text = src.read()
             html_text = markdown.markdown(md_text, extensions=['markdown.extensions.fenced_code'])
             dest.write(html_text)
-            print html_text
+            # print html_text
 
 
 def generate_index_html(markdown_files):
