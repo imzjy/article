@@ -33,8 +33,8 @@ aChild = {__proto__:aParent}
 若我们取aChild.name的值，我们很容易resolve，那就是子域中找不到，去父域中找，找到了jerry。
 但是对于：aChild.name = ‘frank’这样的赋值代码我们会产生歧义(ambiguous)，我们可能有两中含义：
 
-1.更新父域中的name属性为frank。
-2.设置子域中的name属性为frank。
+1. 更新父域中的name属性为frank。
+1. 设置子域中的name属性为frank。
 
 JavaScript选用的方式是第2种。即设置(新建)子域自己的name属性为frank，并隐藏了父域中的name属性。
 我们通常误以为JavaScript是按1的方式工作，其实不是。
