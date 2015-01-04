@@ -9,15 +9,15 @@ GitHub容许我们用两种方式提交代码，一种是SSH，还有一种就�
 
 HTTPS:
 
-image
+![](http://images.cnitblog.com/blog/72292/201306/07112034-d83f719becd54afcb90a9b3822a4f4a5.png)
 
 SSH:
 
-image
+![](http://images.cnitblog.com/blog/72292/201306/07112037-c59da0d8f44c4618b9694256bb799446.png)
 
 如果你的库是以SSH方式提交代码的话，我们先要将SSH改为HTTPS：
 
-image
+![](http://images.cnitblog.com/blog/72292/201306/07112041-e3714049e62e40f39e832fe3e67c3168.png)
 
  
 
@@ -25,24 +25,25 @@ image
 
 我是用的Cygwin的，可以这样设置环境变量，以让Git在提交的时候使用http proxy：
 
-$declare -x HTTPS_PROXY="127.0.0.1:8087"
-
- 
+`$declare -x HTTPS_PROXY="127.0.0.1:8087"`
 
 ### 3,向GitHub提交代码
+
 到这一步已经差不多了，但是如果你直接push代码会有这样的报错：
 
+```text
 SSL certificate problem: unable to get local issuer certificate while accessing https://github.com/jatsz/s3uploader.git/info/refs 
 fatal: HTTP request failed
+```
 
 我们可以临时设置环境变量让Git跳过certificate的检查：
 
-$env GIT_SSL_NO_VERIFY=true git push
+`$env GIT_SSL_NO_VERIFY=true git push`
 
-image
+![](http://images.cnitblog.com/blog/72292/201306/07112046-a17008b708a24378af418e90dd59c229.png)
 
  
-
+---
 参考：
 
 http://stackoverflow.com/questions/128035/how-do-i-pull-from-a-git-repository-through-an-http-proxy
