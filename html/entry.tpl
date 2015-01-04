@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <header class="page-header">
-                <h1>周继元的博客</h1>
+                <!-- <h1>周继元的博客</h1> -->
         </header>
 
         <section class="row">
@@ -21,11 +21,11 @@
         </section>
 
         <footer>
-            <div class="row">
+<!--             <div class="row">
                 <div class="col-xs-12 pull-right">
                     imjatsz@2015    
                 </div>
-            </div>
+            </div> -->
         </footer>
 
     </div>
