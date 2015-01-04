@@ -22,4 +22,4 @@ ssh -qCNgf user@a-proxy-server -D 127.0.0.1:1234
 
 为了防止DNS污染，可以让remote来做DNS解析。在Firefox的地址栏输入 about:config
 
-image
+![Alt Text](http://images.cnitblog.com/blog/72292/201304/11103400-0075ef213f8741779948847af9170d0c.png)
