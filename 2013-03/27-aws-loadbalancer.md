@@ -12,7 +12,7 @@ Amazon的Load balancing配置起来也非常简单，就是将已存在的ec2 in
 
 ### 2，Port转发的配置
 
-在使用Load Balancing之前要设置端口的转发，就在Listeners那个tab中。如果你使用HTTP协议，你就可以选择HTTP协议。如果你是TCP应用请选择TCP，看论坛上说可以使用的TCP![端口在是从1024起步的](https://forums.aws.amazon.com/message.jspa?messageID=343728)。如果你是选了HTTP，有个可能对应用来说比较有用的选项Stickiness，其实就是Load Balancer在HTTP协议上加了一个Cookie，借此来实现Session的功能。
+在使用Load Balancing之前要设置端口的转发，就在Listeners那个tab中。如果你使用HTTP协议，你就可以选择HTTP协议。如果你是TCP应用请选择TCP，看论坛上说可以使用的TCP[端口在是从1024起步的](https://forums.aws.amazon.com/message.jspa?messageID=343728)。如果你是选了HTTP，有个可能对应用来说比较有用的选项Stickiness，其实就是Load Balancer在HTTP协议上加了一个Cookie，借此来实现Session的功能。
 
 ### 3，Health Check
 
