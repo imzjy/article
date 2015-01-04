@@ -59,58 +59,37 @@ func main() {
 
 如果，你想列出当前目录下所有的包(packages)，可以使用
 
-$go list ./…
+`$go list ./…`
 
 当你GOPATH设置过了以后，你所有以go开头的命令，都是以GOPATH指定的项目目录为起始目录的。
 
 比如：
 
-$go test algorithm/bubblesort   #目录为[项目ROOT]src/algorithm/bubblesort，go test是找src目录下的还有test的包
+`$go test algorithm/bubblesort`   #目录为[项目ROOT]src/algorithm/bubblesort，go test是找src目录下的还有test的包
 
  
 
-3，三个点(…)
+### 3，三个点(…)
 对于定义不定参数数量的函数需要三个点…:
 
-1
-func(a, b int, z float64, opt ...interface{})
-最后一个为任意类型的的不定参数，用…来标明。
 
-还有个时常用到…的地方是对数组切片添加元素，当添加的元素是数组或数组切片类型的，append(arr, …T)需要将元素“打散”以当做不定参数来传递，这时也要用到…:
+`func(a, b int, z float64, opt ...interface{})`
 
-1
-2
+最后一个为任意类型的的不定参数，用`...`来标明。
+
+还有个时常用到…的地方是对数组切片添加元素，当添加的元素是数组或数组切片类型的，`append(arr, …T)`需要将元素“打散”以当做不定参数来传递，这时也要用到`...`:
+
+```golang
 s2 := append(s1, 3, 5, 7)  //一个一个传递
 s3 := append(s2, s0...)    //将数组“打散传递”
- 
+```
 
-4，goroutine
+### 4，goroutine
 goroutine是Go语言在语言级别对并发的支持。并发执行体的粒度从系统到轻量级线程分别有：进程，线程，轻量级线程。goroutine应该算是轻量级线程，在我的电脑上(Win7, Intel i7)可以在3s内创建大约300,000个goroutine。
 
 对于并发来说最大的问题是同步和通信，在Go语言中同步和通信是通过语言内置的channel来近乎完美解决的。channel不仅仅是goroutine通信的方式，也通过自动阻塞这种方式达到了同步的目的。channel可以作为函数的参数传来传去，channel这个参数在使用上像一个引用类型。他可以跨“函数”传递消息。然而实际上他是值类型，channel是函数通信的边界，你不能通过channel来执行还有副作用的赋值操作——当然，除了你通过传递一个指针硬要这么做。
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
+```golang
 package main 
 import "fmt"
  
@@ -133,3 +112,4 @@ func main() {
         }
     }
 }
+```
