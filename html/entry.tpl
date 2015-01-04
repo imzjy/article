@@ -15,6 +15,10 @@
                 </div>
             </div>
         </section>
+        
+        <footer>
+            
+        </footer>
     </div>
 </body>
 </html>
