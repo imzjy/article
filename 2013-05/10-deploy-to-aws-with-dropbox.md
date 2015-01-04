@@ -35,7 +35,7 @@ Dropbox提供了Linux下操作Linux服务的工具dropbox.py，具体的使用�
 
 在Windows上，你可以在初始化的时候选择要同步的文件夹，也可以安装后更改：
 
-image
+![dropbox](http://images.cnitblog.com/blog/72292/201305/10094946-cdd41207744d4821af46cc38f6e47bab.png)
 
 在Linux，你可以$dropbox.py exclude add /path/to/ignore去掉那些你不想同步的文件夹。
 
