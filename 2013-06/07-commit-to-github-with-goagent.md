@@ -22,6 +22,7 @@ image
  
 
 ### 2，设置环境变量
+
 我是用的Cygwin的，可以这样设置环境变量，以让Git在提交的时候使用http proxy：
 
 $declare -x HTTPS_PROXY="127.0.0.1:8087"
