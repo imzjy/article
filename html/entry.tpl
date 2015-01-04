@@ -16,9 +16,11 @@
             </div>
         </section>
         
-        <footer>
-            
-        </footer>
+        <section class="row">
+            <div class="col-xs-12">
+                <a href="/" >&lt;&lt; 回首页</a>
+            </div>
+        </section>
     </div>
 </body>
 </html>
