@@ -16,6 +16,7 @@
             </div>
         </section>
         
+        <hr />
         <section class="row">
             <div class="col-xs-12">
                 <a href="/" >&lt;&lt; 回首页</a>
