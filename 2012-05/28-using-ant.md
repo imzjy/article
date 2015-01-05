@@ -3,9 +3,10 @@
 
 Ant是基于Java的自动化构建工具，它依赖于JDK，所以在使用Ant前先要安装JDK，并将JAVA_HOME和PATH环境变量指向JDK，比如在Windows下，环境变量看起来是这个样子的：
 
-> JAVA_HOME = C:\Program Files\Java\jdk1.6.0_31
-
-> PTAH = %JAVA_HOME%\bin;
+```text
+JAVA_HOME = C:\Program Files\Java\jdk1.6.0_31
+PTAH = %JAVA_HOME%\bin;
+```
 
 Ant在使用和概念上很像GNU make，不过是用XML来标记的make，除此之外Ant容许我们用Java来写扩展，这样就可以完成一些比较复杂的构建，甚至是部署的工作了。
 
@@ -54,11 +55,11 @@ Ant中真正做工作是这些task，Ant中配置的繁杂部分也就是各种�
 ### 2，常用的Task
 
 ```text
-copy 用来拷贝文件及目录
-mkdir 用来创建目录
-delete  用来删除文件及文件夹
-move 移动文件及目录，文件及目录重命名
-replace 变量替换，比如 <replace file="main.js" token="@REVISION@" value="${revision}" /> 这个task会将main.js中的@REVSION@标记替换为${ revision }变量的值
+copy     用来拷贝文件及目录
+mkdir    用来创建目录
+delete   用来删除文件及文件夹
+move     移动文件及目录，文件及目录重命名
+replace  变量替换，比如 <replace file="main.js" token="@REVISION@" value="${revision}" /> 这个task会将main.js中的@REVSION@标记替换为${ revision }变量的值
 ```
  
 ### 3，扩展Task
