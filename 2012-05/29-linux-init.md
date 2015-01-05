@@ -59,4 +59,5 @@ ubuntu将所有启动脚本放在`/etc/init.d/`这个目录下。当你运行upd
 
 update-2015-01-05:
 
-[浅析 Linux 初始化 init 系统](http://www.ibm.com/developerworks/cn/linux/1407_liuming_init1/index.html) 这三篇文章讲解了linux系统中init的进化。
+[浅析 Linux 初始化 init 系统](http://www.ibm.com/developerworks/cn/linux/1407_liuming_init1/index.html) 
+这三篇文章讲解了linux中init系统从`init script`到`upstart`再到`systemd`的进化过程。
