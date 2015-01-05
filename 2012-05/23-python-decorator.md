@@ -227,7 +227,7 @@ in logout:
 exit the login
 ```
 
-我们看到两个装饰器都已经成功应用上去了，不过输出却不相同。造成这个输出不同的原因是我们应用装饰器的顺序不同。回头看看我们login的定义，我们是先应用others，然后才是printdebug。而logout函数真好相反，发生了什么？如果你仔细看logout函数的输出结果，可以看到装饰器的递归。从输出可以看出：logout函数先应用printdebug，打印出“enter the login”。printdebug的__decorator调用中间应用了others的__decorator，打印出“***other decorator***”。其实在逻辑上我们可以将logout函数应用装饰器的过程这样看（伪代码）：
+我们看到两个装饰器都已经成功应用上去了，不过输出却不相同。造成这个输出不同的原因是我们应用装饰器的顺序不同。回头看看我们login的定义，我们是先应用others，然后才是printdebug。而logout函数真好相反，发生了什么？如果你仔细看logout函数的输出结果，可以看到装饰器的递归。从输出可以看出：logout函数先应用printdebug，打印出`enter the login`。`printdebug`的`__decorator`调用中间应用了others的`__decorator`，打印出`***other decorator***`。其实在逻辑上我们可以将logout函数应用装饰器的过程这样看（伪代码）：
 
 ```
 @printdebug    #switch decorator order
