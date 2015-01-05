@@ -11,6 +11,15 @@ from string import Template
 CURPATH = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(CURPATH, 'html')
 
+class ExtNotFoundException(Exception):
+    pass     
+
+def replace_ext(path, old_ext, new_ext):
+    if path[-len(old_ext):] == old_ext:
+        return path[:-len(old_ext)] + new_ext
+    else:
+        raise ExtNotFoundException()
+
 def get_tpl(tpl_name):
     with codecs.open(os.path.join(OUTPUT_DIR, tpl_name), 'r', 'utf-8') as f:
         index_tpl = f.read()
@@ -50,7 +59,7 @@ def markdown_to_html(markdown_files):
         #convert
         src_full_name = os.path.join(path, name)
         print 'processing:' + src_full_name
-        dest_full_name = os.path.join(dest_folder, name).rstrip('.md') + '.html'
+        dest_full_name = replace_ext(os.path.join(dest_folder, name), '.md', '.html')
         with codecs.open(src_full_name, mode='r', encoding="utf-8") as src, \
             codecs.open(dest_full_name, 'w', 'utf-8') as dest:
             
@@ -65,7 +74,7 @@ def generate_index_html(markdown_files):
 
     article_list = ''
     for full_name in reversed(sorted(markdown_files_in_full_name)):
-        article_url = full_name.rstrip('.md') + '.html'
+        article_url = replace_ext(full_name, '.md', '.html')
         article_list += u'<li><a href="{0}">{1}</a></li>\n'.format(article_url, get_article_title(full_name))
 
     index_tpl = Template(get_tpl('index.tpl'))
