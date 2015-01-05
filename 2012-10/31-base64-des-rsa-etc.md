@@ -34,5 +34,5 @@ http://stackoverflow.com/questions/1181421/is-possible-to-encrypt-with-private-k
 
 算法：
 
-SHA1：http://zh.wikipedia.org/wiki/SHA1 
-MD5： http://zh.wikipedia.org/wiki/MD5
+- SHA1：http://zh.wikipedia.org/wiki/SHA1 
+- MD5： http://zh.wikipedia.org/wiki/MD5
