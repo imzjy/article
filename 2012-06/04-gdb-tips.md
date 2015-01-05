@@ -28,7 +28,7 @@ To be continue….
 
 
 ----
-update[2015-01-05]:
+update-2015-01-05:
 
 更多gdb的技巧参见:
 
