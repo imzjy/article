@@ -4,6 +4,7 @@
 Ant是基于Java的自动化构建工具，它依赖于JDK，所以在使用Ant前先要安装JDK，并将JAVA_HOME和PATH环境变量指向JDK，比如在Windows下，环境变量看起来是这个样子的：
 
 > JAVA_HOME = C:\Program Files\Java\jdk1.6.0_31
+
 > PTAH = %JAVA_HOME%\bin;
 
 Ant在使用和概念上很像GNU make，不过是用XML来标记的make，除此之外Ant容许我们用Java来写扩展，这样就可以完成一些比较复杂的构建，甚至是部署的工作了。
