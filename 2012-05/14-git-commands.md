@@ -196,7 +196,7 @@ git reset –mixed HEAD^
 git tag rev-1.1 –m “create tag for release v 1.1”
 ```
 
-#### 9，杂项
+### 9，杂项
 
 #### 9.1，忽略一些文件：添加.gitignore文件
 
@@ -208,7 +208,7 @@ git tag rev-1.1 –m “create tag for release v 1.1”
 *.avi 
 *.mp4 
 *.wmv
-```text
+```
 
 #### 9.2，不要轻易用git reset –hard
 
