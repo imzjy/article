@@ -43,15 +43,13 @@ Python的一些惯用法
 
 有时候你运行单元测试python a-unit-test-run.py会发现单元测试的中import our-module会报错：`ImportError: no module named our-module`。这是应为Python搜索不到这个Module/Package
 
-Python会在下面的目录查找Module/Package
+Python会在下面的目录[查找Module/Package](http://docs.python.org/tutorial/modules.html#the-module-search-path)
 
 1. 内置模块
 2. 当前目录: `unit-test-script.py`所在目录
 3. PYTHONPATH环境变量指定目录: `export PYTHONPATH=’/usr/jerry/python-modules`
 4. 标准库: `system installation default`
 5. sys.path: 可以通过`sys.path.appen('/usr/jerry/python-modules')`来添加
-
-http://docs.python.org/tutorial/modules.html#the-module-search-path
 
 如果你觉得这样运行单元测试比较繁琐，你可以[使用nose](http://schettino72.wordpress.com/tag/nose/)。
 
