@@ -1,9 +1,9 @@
 从JQuery中的Deferred对象谈谈异步编程
 ======
 
-JQuery中的Deferred Object其实就是实现了一种异步编程模式，这个模式在CommonJS中有介绍。这种模式改变的代码的书写方式，他采用的异步模式还是回调式异步(async callback)。通常我们的异步代码都是non-blocking的，我们开一个异步操作，我们不知道什么时候完成，我们需要知道的就是这个异步操作在完成的时候通过我们传入的callback来通知我们。
+JQuery中的[Deferred Object](http://api.jquery.com/category/deferred-object/)其实就是实现了一种异步编程模式，这个模式在[CommonJS](http://wiki.commonjs.org/wiki/Promises)中有介绍。这种模式改变的代码的书写方式，他采用的异步模式还是回调式异步(async callback)。通常我们的异步代码都是non-blocking的，我们开一个异步操作，我们不知道什么时候完成，我们需要知道的就是这个异步操作在完成的时候通过我们传入的callback来通知我们。
 
-具体Deferred Object怎么用，可以参考阮一峰的《jQuery的deferred对象详解》。我这里想谈的是异步编程模式。现在我们的整个internet就是异步的，你获取一个页面这个页面的处理，返回都是以一种异步的方式在工作，所以现在编程很难绕开异步。而基本上目前所有的异步，都是观察者模式的变种，即subscribe,publish式的。而区别就在于subscrible的时间和约定或者说是语法。常见的异步编程模式有：
+具体Deferred Object怎么用，可以参考阮一峰的《[jQuery的deferred对象详解](http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html)》。我这里想谈的是异步编程模式。现在我们的整个internet就是异步的，你获取一个页面这个页面的处理，返回都是以一种异步的方式在工作，所以现在编程很难绕开异步。而基本上目前所有的异步，都是观察者模式的变种，即subscribe,publish式的。而区别就在于subscrible的时间和约定或者说是语法。常见的异步编程模式有：
 
 ### 1，notification, message, intent
 
@@ -19,4 +19,4 @@ JQuery中的Deferred Object其实就是实现了一种异步编程模式，这�
 
 ### 3，others
 
-其他的变种还有很多例如.net中的Task-based async(TAP)和APM，最大的区别就在于管理异步的注册的方式不同。TAP把这些都抽象在Task这个对象中，C# 5.0中新加的await, async把这种注册方式集成在语言中。
+其他的变种还有很多例如.net中的[Task-based async(TAP)](http://msdn.microsoft.com/en-us/library/hh873175.aspx)和[APM](http://msdn.microsoft.com/en-us/library/ms228963.aspx)，最大的区别就在于管理异步的注册的方式不同。TAP把这些都抽象在Task这个对象中，C# 5.0中新加的await, async把这种注册方式集成在语言中。
