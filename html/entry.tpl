@@ -7,7 +7,9 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        font: 18px/1 "Helvetica Neue", Helvetica, Tahoma, Arial, \5b8b\4f53, sans-serif;
+        html {
+            font: 16px/1 "Helvetica Neue", Helvetica, Tahoma, Arial, \5b8b\4f53, sans-serif;
+        }
     </style>
 </head>
 <body>
