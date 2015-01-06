@@ -3,9 +3,9 @@
 <head>
     <title>博客 | 周继元</title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <meta name=viewport content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div class="container">
