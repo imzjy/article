@@ -1,4 +1,5 @@
 递归的本质(Essential of Recursive)
+========
 
 最初让我体会递归的就Joe的《[Programming Erlang](http://book.douban.com/subject/3260311/)》，随着对计算(computing)的理解，对递归的体会也会有所不同。这里我记录下我的理解过程。
 
