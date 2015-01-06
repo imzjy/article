@@ -7,7 +7,9 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <meta name=viewport content="width=device-width, initial-scale=1">
     <style>
-        font: 18px/1 "Helvetica Neue", Helvetica, Tahoma, Arial, \5b8b\4f53, sans-serif;
+        html {
+            font: 16px/1 "Helvetica Neue", Helvetica, Tahoma, Arial, \5b8b\4f53, sans-serif;
+        }
     </style>
 </head>
 <body>
