@@ -235,7 +235,7 @@ private void Brightness(string srcFileName, string destFileName, float grain)
  
     bitPic.Save(destFileName);
 }
-```csharp
+```
 
 ##### 通过HSV中V分量来改变图片明暗度
 
