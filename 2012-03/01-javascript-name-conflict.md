@@ -1,7 +1,7 @@
 JavaScript中变量名重名
 =======
 
-今天看到园子里的一篇文章，进的是变量名的重名问题，我们直接来看代码:
+今天看到园子里的[一篇文章](http://www.cnblogs.com/snandy/archive/2012/03/01/2373237.html)，进的是变量名的重名问题，我们直接来看代码:
 
 ```javascript
 var a;
