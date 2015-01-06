@@ -31,4 +31,8 @@ a();
 
 JavaScript静态决定了变量的作用域，并在调用(动态)时创建Execution Context，其中通过Variable Object，Active Object，Scope Object包含引用的变量。而Scope Object保存了当前函数引用其外部函数的变量(通过Lexical Analysis很早有就可以决定了)——这构成了闭包本身。
 
-具体的实现可能是写时复制(Copy-On-Write)，当引用一个变量，JavaScript引擎先在当前EC的作用域中查找变量定义及当前值。如果找不到，再去上一级EC中查找，直到Global EC。这也就是作用域的查找，其本质也就是栈的递归。当需要修改别的EC中变量时，将该变量复制到当前EC的作用域对象(Scope Object)中。换个说法Scope Object中保存的都是当前函数用到的变量的“引用”，只有需要改变该Scope Object中变量的时候才去：1，copy一份。2，改变变量值，3，保存在当前EC的Scope Object中。
+具体的实现可能是写时复制(Copy-On-Write)，当引用一个变量，JavaScript引擎先在当前EC的作用域中查找变量定义及当前值。如果找不到，再去上一级EC中查找，直到Global EC。这也就是作用域的查找，其本质也就是栈的递归。当需要修改别的EC中变量时，将该变量复制到当前EC的作用域对象(Scope Object)中。换个说法Scope Object中保存的都是当前函数用到的变量的“引用”，只有需要改变该Scope Object中变量的时候才去：
+
+1. copy一份。
+2. 改变变量值。
+3. 保存在当前EC的Scope Object中。
