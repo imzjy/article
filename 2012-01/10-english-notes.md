@@ -39,7 +39,8 @@ The name of a national language is often the same as the national adjective.
 
 ### 2, Examples
 
-Country/Region	Adjective	Person	Population
+```text
+Country/Region Adjective	Person Population
 America	American	an American	the Americans
 Belgium	Belgian	a Belgian	the Belgians
 Brazil	Brazilian	a Brazilian	the Brazilians
@@ -59,12 +60,13 @@ China	Chinese	a Chinese	the Chinese
 Congo	Congolese	a Congolese	the Congolese
 Portugal	Portuguese	a Portuguese	the Portuguese
 Switzerland	Swiss	a Swiss	the Swiss
- 
+```
 
 ### 3,Exceptions
 
-Country/Region	Adjective	Person	Population
-Britain	British	a British person(Briton)	the British
+```text
+Country/Region Adjective	Person Population
+Britain British a British person(Briton)	the British
 England	English	an Englishwoman/man	the English
 France	French	a Frenchman/woman	the French
 Ireland	Irish	an Irishwoman/man	the Irish
@@ -77,7 +79,7 @@ Poland	Polish	a Pole	the Poles
 Scotland	Scottish,Scotch	a Scot	the Scots
 Sweden	Swedish	a Swede	the Swedes
 Turkey	Turkish	a Turk	the Turks
- 
+```
 
 ### 4,Notes
 
