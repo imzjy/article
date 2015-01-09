@@ -3,7 +3,7 @@ JavaScript中的原型继承
 
 下面的理解是错的，只是个笔记。代表我曾经的思考。
 
-学习JavaScript时需要将prototype和__proto__分清，Quora中有一篇解释挺好。
+学习JavaScript时需要将`prototype`和`__proto__`分清，[Quora中有一篇解释](http://www.quora.com/JavaScript/What-is-the-difference-between-__proto__-and-prototype)挺好。
 
 ---
 
