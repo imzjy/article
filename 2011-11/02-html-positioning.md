@@ -74,7 +74,7 @@ HTML中的几种定位方式
 ### 7，reference
 
 ```text
-Value        Description
+Value       Description
 static	    Elements renders in order, as they appear in the document flow. This is default.
 absolute	The element is positioned relative to its first positioned (not static) ancestor element
 fixed	    The element is positioned relative to the browser window
