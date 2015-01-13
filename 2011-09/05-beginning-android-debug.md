@@ -1,12 +1,13 @@
 Beginning Android Debug
+=====
 
 For debugging my cellphone(Motorola Defy ME525) problem, I want to debug my cellphone using android toolbox.
 
 ### 1,preparations
 
-Before starting to debug our android-enabled cellphone, you need download USB driver for a specific brand and model. To Defy ME525, downloading & installing the driver by link of USB and PC Charging Drivers - Motorola Mobility, Inc. USA.
+Before starting to debug our android-enabled cellphone, you need download USB driver for a specific brand and model. To Defy ME525, downloading & installing the driver by link of [USB and PC Charging Drivers - Motorola Mobility, Inc. USA](http://www.motorola.com/consumers/v/index.jsp?vgnextoid=bda09ec8009a0210VgnVCM1000008806b00aRCRD&pubid=987654).
 
-We debug the android-enabled devices by ADB(Android Debug Bridge).It’s packaged in Android SDK. Please refer to  http://developer.android.com/sdk/index.html.
+We debug the android-enabled devices by ADB([Android Debug Bridge](http://developer.android.com/tools/help/adb.html)).It’s packaged in Android SDK. Please refer to  http://developer.android.com/sdk/index.html.
 
 In Defy ME525, turning on the USB Debug option.
 
