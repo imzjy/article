@@ -11,13 +11,13 @@ HTML中的几种定位方式
 
 在static的基础上，如果我想让一个元素在他本来的位置做一些调整(位移)，我们可以将该元素定位设置为relative，同时指定相对位移(利用top,bottom,left,right)。
 
-有一点需要注意的是，相对定位的元素仍然在文档流中，仍然占据着他本来占据的位置空间——虽然他现在已经不在本来的位置了。
+有一点需要注意的是，相对定位的元素**仍然在文档流中**，仍然占据着他本来占据的位置空间——虽然他现在已经不在本来的位置了。
 
 ### 3，absolute(绝对定位)
 
 如果你想在一个文档(Document)中将一个元素放至指定位置，你可以使用absolute来定位，将该元素的position设置为absolute，同时使用top,bottom,left,right来定位。
 
-绝对定位会使元素从文档流中被删除，结果就是该元素原本占据的空间被其它元素所填充。
+绝对定位会使元素**从文档流中被删除**，结果就是该元素原本占据的空间被其它元素所填充。
 
 ### 4，mix relative and absolute(混合相对定位和绝对定位)
 
@@ -30,7 +30,7 @@ HTML中的几种定位方式
 </div>
 ```
 
-则子元素的绝对定位的参照物为父元素。
+则子元素的绝对定位的**参照物为父元素**。
 
 利用混合定位，我们可以用类似下面的css来实现两列(Two Column)定位
 
@@ -74,12 +74,12 @@ HTML中的几种定位方式
 ### 7，reference
 
 ```text
-Value     Description
-static	  Elements renders in order, as they appear in the document flow. This is default.
+Value        Description
+static	    Elements renders in order, as they appear in the document flow. This is default.
 absolute	The element is positioned relative to its first positioned (not static) ancestor element
 fixed	    The element is positioned relative to the browser window
 relative	The element is positioned relative to its normal position, so "left:20" adds 20 pixels to the element's LEFT position
-inherit	  The value of the position property is inherited from the parent element
+inherit	    The value of the position property is inherited from the parent element
 ```
 
 -----
