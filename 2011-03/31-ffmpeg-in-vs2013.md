@@ -3,16 +3,15 @@
 
 ### 1，准备工作
 
-很多播放器都使用了ffmpeg这个类库来编解码，使用没有关系，但总是有些人不守规则。在耻辱榜上我看到了腾讯(QQPlayer)，还有另一家深圳的公司。
+很多播放器都使用了ffmpeg这个类库来编解码，使用没有关系，但总是有些人不守规则。在[耻辱榜](http://ffmpeg.org/shame.html)上我看到了腾讯(QQPlayer)，还有另一家深圳的公司。
 
-image
+![](http://images.cnblogs.com/cnblogs_com/Jerry-Chou/201103/201103311106299105.png)
 
-我对GPL协议也不太了解，issue tracker中显示QQPlayer需要提供完整项目代码。我的疑问是：
+我对GPL协议也不太了解，[issue tracker](https://roundup.libav.org/issue1519)中显示QQPlayer需要提供完整项目代码。我的疑问是：
 
-如果是QQPlayer。其中集成了QQ的一些登陆模块，但这些代码不方便公开。但Player相关的代码已经公开。这样违反GPL吗？
+> 如果是QQPlayer。其中集成了QQ的一些登陆模块，但这些代码不方便公开。但Player相关的代码已经公开。这样违反GPL吗？
 
-
-NOTE:下文中DLL或LIB(大写指文件即avcodec.dll,avcodec.lib.etc.)，dll或lib(小写，指目录)。
+NOTE:下文中`DLL`或`LIB`(大写指文件即`avcodec.dll`,`avcodec.lib`.etc.)，`dll`或`lib`(小写，指目录)。
 
 继上篇在MinGW中编译ffmpeg之后，我们便可以得到一些LIB和DLL，我们可以使用这些LIB和DLL来使用ffmpeg的相关功能函数。
 
