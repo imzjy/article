@@ -99,7 +99,7 @@ Fields:
 63571dc8  40000ee        8          System.Char  1 instance       28 m_firstChar 
 6356f9ac  40000ef        8        System.String  0   shared   static Empty 
     >> Domain:Value  00665b58:021d1228 << 
-```text
+```
 
 命令的备注：
 
