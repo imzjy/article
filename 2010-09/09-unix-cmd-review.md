@@ -5,31 +5,31 @@ Unix Command Review
 
 #### 1, Command Format
 
-Commands must be typed all on one line, with spaces between the command, options, and arguments.
+> Commands must be typed all on one line, with spaces between the command, options, and arguments.
 
 #### 2,Naming Files
 
-Filenames consist of alphanumeric characters, underscores, dashes, and periods.  DO NOT use spaces or other punctuation in filenames!
+> Filenames consist of alphanumeric characters, underscores, dashes, and periods.  DO NOT use spaces or other punctuation in filenames!
 
 #### 3,Case Sensitivity
 
-Commands and filenames in UNIX are case sensitive!!
+> Commands and filenames in UNIX are case sensitive!!
 
 #### 4,Filename Completiom
 
-After typeing a unique prefix of a filename, pressing the Tab key will cause the Unix shell to complete the filename.
+> After typeing a unique prefix of a filename, pressing the Tab key will cause the Unix shell to complete the filename.
 
 #### 5,Command Editing
 
-The up arrow key will retrieve a previous command. This command may be edited using the left/right arrow keys and backspace.
+> The up arrow key will retrieve a previous command. This command may be edited using the left/right arrow keys and backspace.
 
 #### 6,^C (control-C)
 
-In UNIX, this terminates a currently running process when typed in the window the process is running in.
+> In UNIX, this terminates a currently running process when typed in the window the process is running in.
 
 #### 7,^Z (control-Z)
 
-In UNIX, this sends a process to run in the background. The process will still exist; you just won't see it. Type "fg" to bring it back so that you can exit properly. Don't exit Unix with processes running in the background.
+> In UNIX, this sends a process to run in the background. The process will still exist; you just won't see it. Type "fg" to bring it back so that you can exit properly. Don't exit Unix with processes running in the background.
 
 ### Working with Directories
 
@@ -95,6 +95,7 @@ cp f1 dir    copy f1 to a specific directory
 ```text
 rm f1       delete a file permanently,Use this command carefully - there is no Undo!!
 rm –i f1    ask your confirm before you delete a file. in practice, you can add alias from rm to rm –i in your .bashrc file
+```
 
 #### 5,Change file’s mode(who can operate on the file)
 
@@ -109,38 +110,43 @@ grep pattern files      find the lines that meet the pattern
 grep –r pattern  dir   find the lines recursively in a directory. e.g. grep –r fatal  /var/log
 ```
 
-2,Counting
+#### 2,Counting
 
+```text
 wc –l       count by line,usually get input from pipeline. e.g. cat f1 | wc -l
-
 wc –w       count by word
-
 wc –m       count by character
+```
 
-Input/Output and Pipelines
-0,Input/output notes
+### Input/Output and Pipelines
 
-By default the output of a command goes to STDOUT (standard output or the monitor), and input of a command comes from STDIN (the keyboard).  Input and output can be redirected to/from files with the  < , > and  >> symbols
+#### 0,Input/output notes
 
-1,Redirect
+> By default the output of a command goes to STDOUT (standard output or the monitor), and input of a command comes from STDIN (the keyboard).  Input and output can be redirected to/from files with the  < , > and  >> symbols
 
-cat f1 f2 > f3    concatenate files f1 and f2 and store the result in file f3. Warning: this overwrites file f3
+#### 1,Redirect
 
-cat f1 >> f2       concatenate file f1 and append to the contents of f2
-
+```text
+cat f1 f2 > f3         concatenate files f1 and f2 and store the result in file f3. Warning: this overwrites file f3
+cat f1 >> f2           concatenate file f1 and append to the contents of f2
 sort < f1 > f1.sort    sort command reads from f1 and outputs to f1.sort
+```
 
-2,Pipelines notes
+#### 2,Pipelines notes
 
-Multiple commands can be chained together in a pipeline with the | (‘pipe’) symbol.  When | is used between commands, the output of the first command is piped as input to the second command
+> Multiple commands can be chained together in a pipeline with the | (‘pipe’) symbol.  When | is used between commands, the output of the first command is piped as input to the second command
 
-3,Pipelines
+#### 3,Pipelines
 
-grep “A” f1 | wc –l      find lines in f1 containing “A” and pipe them to wc  -l Note: this counts the number of lines containing “A” 
-grep “>” f1 | wc –l     note that quoting “>” prevents it from acting as output redirection. 
-cat f1|sort|head           send the contents of f1 to the sort command, then send the sorted lines to the head command to print the top 10.
+```text
+grep “A” f1 | wc –l   find lines in f1 containing “A” and pipe them to wc  -l Note: this counts the number of lines containing “A” 
+grep “>” f1 | wc –l   note that quoting “>” prevents it from acting as output redirection. 
+cat f1|sort|head      send the contents of f1 to the sort command, then send the sorted lines to the head command to print the top 10.
+```
 
-Finding help
-command –help   a short usage description
+### Finding help
 
+```text
+command –help    a short usage description
 man command      manual for a command
+```
