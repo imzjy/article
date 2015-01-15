@@ -13,20 +13,17 @@
 
 NOTE:下文中`DLL`或`LIB`(大写指文件即`avcodec.dll`,`avcodec.lib`.etc.)，`dll`或`lib`(小写，指目录)。
 
-继上篇在MinGW中编译ffmpeg之后，我们便可以得到一些LIB和DLL，我们可以使用这些LIB和DLL来使用ffmpeg的相关功能函数。
+继上篇在[MinGW中编译ffmpeg](http://www.cnblogs.com/Jerry-Chou/archive/2011/03/29/1998564.html)之后，我们便可以得到一些LIB和DLL，我们可以使用这些LIB和DLL来使用ffmpeg的相关功能函数。
 
-image
+![](http://images.cnblogs.com/cnblogs_com/Jerry-Chou/201103/201103311115087881.png)
 
-其中头文件在include目录下，LIB及DLL在bin目录下。其实这些LIB并不是传统的静态库文件(真正的静态库文件是在lib目录下的*.a文件)，他们是dll的导出文件。
+其中头文件在`include`目录下，`LIB`及`DLL`在`bin`目录下。其实这些LIB并不是传统的静态库文件(真正的静态库文件是在lib目录下的*.a文件)，他们是dll的导出文件。
 
- 
+另外，C99中添加了几个新的头文件，VC++中没有，所以需要你[自己下载](http://msinttypes.googlecode.com/files/msinttypes-r26.zip)。并放至[相应目录](http://libav.org/general.html#SEC23)。对于VS2010来说通常是：`C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include`。
 
-另外，C99中添加了几个新的头文件，VC++中没有，所以需要你自己下载。并放至相应目录。对于VS2010来说通常是：C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include。
+### 2，示例代码
 
- 
-
-2，示例代码
-网上的ffmpeg的示例代码大多过时了，在2009年初img_convert这个函数被sws_scale取代了，所以可能你从网上找到的示例代码并不可以运行(但代码运作原理还是一样的)。
+网上的ffmpeg的示例代码大多过时了，在2009年初[`img_convert`这个函数被`sws_scale`](http://dranger.com/ffmpeg/)取代了，所以可能你从网上找到的示例代码并不可以运行(但代码运作原理还是一样的)。
 
 我这里贴出一份当前可以运行的代码。
 
