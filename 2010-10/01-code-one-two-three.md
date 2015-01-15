@@ -5,7 +5,7 @@ Code 1-2-3
 
 上周接到一个Bug，修改一个Message。进行一个业务操作，如果有一个收据证明(Receipt Number)的话，对用户的显示Message将所有所不同，最简单直接的实现：
 
-```text
+```csharp
 if (string.IsNullOrEmpty(this._presenter.ReceiptNumber))
 {
     if (Utility.ShowMessageBox(Messages.Tenancy.TNC059).Equals(DialogResult.No)) return;
@@ -17,13 +17,13 @@ else
 ```
 光这个Snippets看不出别扭，在代码中这个Snippets还套在另一个If…else之中，那个难看啊。我想缩短代码行数：
 
-```text
+```csharp
 if (Utility.ShowMessageBox(string.IsNullOrEmpty(this._presenter.ReceiptNumber) ? Messages.Tenancy.TNC131 : Messages.Tenancy.TNC059).Equals(DialogResult.No)) return;
 ```
 
 但是这段代码的表现力又不够强，我又修改了一下，加强一下表现力。
 
-```text
+```csharp
 var message = string.IsNullOrEmpty(this._presenter.ReceiptNumber) ? Messages.Tenancy.TNC131 : Messages.Tenancy.TNC059;
 if (Utility.ShowMessageBox(message).Equals(DialogResult.No)) return;
 ```
