@@ -246,42 +246,38 @@ static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame)
 
 ![](http://images.cnblogs.com/cnblogs_com/Jerry-Chou/201103/201103311115093322.png)
 
-3.3 设置所引用的LIB文件
+#### 3.3 设置所引用的LIB文件
 
-image
-
- 
+![](http://images.cnblogs.com/cnblogs_com/Jerry-Chou/201103/201103311115098272.png)
 
 如果一切正常，这时你便可以编译成功。
 
- 
+### 4，可能出现的问题
 
-4，可能出现的问题
-4.1 运行时出错
+#### 4.1 运行时出错
 
 虽然你可以成功编译，但你F5，调试时会出现以下错误。
 
-image
+![](http://images.cnblogs.com/cnblogs_com/Jerry-Chou/201103/201103311115103222.png)
 
-原因是，你虽然引用了LIB文件，但这并不是真正的静态库文件，而是对DLL的引用，所以当你调用ffmpeg库函数时，需要DLL文件在场。你可以用dumpbin(VS自带工具)来查看你生成的exe中引用了哪些DLL文件。你在命令行输入：
+原因是，你虽然引用了`LIB`文件，但这并不是真正的静态库文件，而是对`DLL`的引用，所以当你调用`ffmpeg`库函数时，需要`DLL`文件在场。你可以用dumpbin(VS自带工具)来查看你生成的exe中引用了哪些DLL文件。你在命令行输入：
 
->dumpbin ffmpeg-example.exe /imports
+`>dumpbin ffmpeg-example.exe /imports`
 
 你可以从输出中看出你实际引用以下几个的DLL文件。
 
+```text
 avcodec-52.dll 
 avformat-52.dll 
 swscale-0.dll 
 avutil-50.dll 
+```
 
- 
+还有些朋友可能想将ffmpeg库进行静态引用，这样就不需要这些DLL文件了。这样做是可行的，但是[不推荐](http://lists.mplayerhq.hu/pipermail/ffmpeg-user/2006-December/005925.html)的。
 
-还有些朋友可能想将ffmpeg库进行静态引用，这样就不需要这些DLL文件了。这样做是可行的，但是不推荐的。
 
- 
-
-4.2 av_open_input_file失败
+#### 4.2 `av_open_input_file`失败
 
 在VS的Command Argumetns中使用全路径。
 
-image
+![](http://images.cnblogs.com/cnblogs_com/Jerry-Chou/201103/201103311115104618.png)
