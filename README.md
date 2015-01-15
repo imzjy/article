@@ -3,7 +3,7 @@ article
 
 ### repo written in markdown for blog articles
 
-http://blog.jatsz.org
+http://blog.imzjy.com
 
 
 ### how it works
