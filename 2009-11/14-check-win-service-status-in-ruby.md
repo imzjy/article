@@ -111,9 +111,9 @@ end
 这里我们申明了一个Windows API,其中`Win32API.new`方法有四个参数。
 
 1. API所在动态链接库的名称，如user32,kernel32.... 
-1. API的方法名称。
-1. 传入参数类型:两个Integer类型的参数，常用的还有['P']-Pointer,['V']-void,['n']-number. 
-1. 返回值类型。 
+1. API的方法名称
+1. 传入参数类型:两个Integer类型的参数，常用的还有: `['P']-Pointer, ['V']-void, ['n']-number` 
+1. 返回值类型
 
 ### 四，结语 
 
