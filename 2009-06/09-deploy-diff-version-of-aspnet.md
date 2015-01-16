@@ -9,7 +9,7 @@ IIS6.0 上布署不同版本的asp.net应用
 
 我们在进行企业应用开发时难免会同时在几个版本的交叉。我们想要在一台server上布署多个版本asp.net应用需要注意以下方面。
 
-### 1，Application Pool
+### 1. Application Pool
 
 IIS6.0采用隔离的worker process，每一个Application Pool对应一个隔离的工作进程(即w3wp.exe)。所以当你建立了多个Application Pool时，你会在任务管理器中看现多个w3wp.exe进程，如下图：
 
@@ -22,7 +22,7 @@ IIS6.0采用隔离的worker process，每一个Application Pool对应一个隔�
 最佳实践是你可以为.net版本创建不同的Application Pool，分别用来布署不同版本的asp.net应用。
  
  
-### 2,Asp.net版本的设置
+### 2. Asp.net版本的设置
 
 在布署完asp.net应用时，你需要设置asp.net应用的版本。
 
