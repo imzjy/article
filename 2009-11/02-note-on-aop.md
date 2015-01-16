@@ -5,56 +5,59 @@
 
 对于这个概念，我一向不能体会。今天回忆Python，Ruby编程知识时突然来了感觉。做个记号。
 
-1，从重复的代码说起。
+### 1，从重复的代码说起。
 
 时常写代码，时常写重复的代码，时常写那些看似无用的重复代码，时常写那些看似无用又不得不写的代码。
 
-在应用系统编程中，我们时常在Login相关的方法中添加对权限检查的代码，形如：
+在应用系统编程中，我们时常在`Login`相关的方法中添加对权限检查的代码，形如：
 
-复制代码
-1public void OnLogin()
-2{
-3    if (Session["Privilege"] != "Admin")
-4    {
-5        throw ApplicationException("Unauthenticated");
-6        return;
-7    }
-8    //Other Codes
-9}
-复制代码
+```csharp
+public void OnLogin()
+{
+    if (Session["Privilege"] != "Admin")
+    {
+        throw ApplicationException("Unauthenticated");
+        return;
+    }
+    //Other Codes
+}
+```
+
 类似这样的代码在每个页面都会出现。
 
-我们从代码结构上看到OnLogin方法基本上由以下两个方面（切面）组成
+我们从代码结构上看到OnLogin方法基本上由以下两个方面（切面）组成：
 
-//A,执行权限检查——重复
-
-//B,执行其它事务
+1. 执行权限检查——重复
+1. 执行其它事务
 
 对于"A,执行权限检查"来说该部分代码在每个页面中都是一样的，且相对不会发生改变的——只要执行正常的权限检查都需要该部分代码。
 
- 怎么办？
+**怎么办？**
 
 最常用的一个方法是"封装方法"，将执行权限检查那部分代码封装成静态方法调用，形如：
 
-1public void OnLogin()
-2{
-3    Common.CheckPrivilege("Admin");
-4    //Other Codes
-5}
+```csharp
+public void OnLogin()
+{
+    Common.CheckPrivilege("Admin");
+    //Other Codes
+}
+```
+
 这样已经开始将关注点封装起来了，但还是还差一点：我们还要将其分离——在不同的方法中，在不同的文件中。
 
 其实对客户端代码来说，我们最理想的方法莫过于：
 
-1[PrivilegeCheck("Admin")]
-2public void OnLogin()
-3{
-4    //Other Codes
-5}
- 通过自定义属性（Custom Attibutes）我们将“执行权限检查”的代码和“执行其它任务“的代码完全分开的，不仅逻辑上分开，物理上也分开了（两个文件）。更重要的是我们可以动态地构建一个通过（模版）代码，在运行时（Runtime）将两个切面的代码进行粘合。从而得到最大的灵活性和客户代码的简单性。
+```csharp
+[PrivilegeCheck("Admin")]
+public void OnLogin()
+{
+    //Other Codes
+}
+```
+通过自定义属性（Custom Attibutes）我们将“执行权限检查”的代码和“执行其它任务“的代码完全分开的，不仅逻辑上分开，物理上也分开了（两个文件）。更重要的是我们可以动态地构建一个通过（模版）代码，在运行时（Runtime）将两个切面的代码进行粘合。从而得到最大的灵活性和客户代码的简单性。
 
- 
-
-2，什么是切面/关注点。
+### 2，什么是切面/关注点。
 
 曾看过一篇文章说AOP是OOP的升级，当时不懂AOP，也不知道是说啥，现在好像明白了一些。
 
@@ -62,17 +65,13 @@
 
 以我目前了解，理解封装并成功实现封装是实现AOP的第一步。 其次是寻找一个合适的切面。
 
-
-
-3，一个AOP小示例。
+### 3，一个AOP小示例。
 
 为了加深理解，我使用AOP的观念写了示例代码，用来执行登陆时的权限检查。
 
- AOP小示例
+[AOP小示例](http://files.cnblogs.com/Jerry-Chou/Sample/AOP/Login_AOP.zip)
 
-
-
-4，有了AOP我们能做些什么?
+### 4，有了AOP我们能做些什么?
 
 我们时常可以在各类框架中看到AOP的运用。其实需要“将注点分离”的地方都可以使用AOP。比如执行Logging,执行数据库的Transaction，都要需要大量重复且不得不写的代码，这些地方也是AOP常被应用的地方。
 
