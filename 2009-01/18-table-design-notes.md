@@ -29,14 +29,14 @@
 
 - Master data（资料主档） is data which is frequently accessed, but which is rarely updated.
 
-	An example of master data is the data contained in an address file, for example, name, address, and telephone number.
+  An example of master data is the data contained in an address file, for example, name, address, and telephone number.
 
 - Transaction data（交易主档） is data that is changed frequently.
 
-	An example oftransaction data is the stock of goods in a warehouse, which changes each time an order is processed.
+  An example oftransaction data is the stock of goods in a warehouse, which changes each time an order is processed.
 
 - Organizational data（配置主档） is customizing data that is entered when the system is configured and is then rarely changed.
 
-	The table with country keys is an example.
+  The table with country keys is an example.
 
 数据库重构似乎比代码重构要难的多，采用原型的方法，经多次迭代可以做出更好的数据库结构设计，但这往往是不允许的。因此你需要积累经验。
