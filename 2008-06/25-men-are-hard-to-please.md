@@ -1,4 +1,4 @@
-Men Are Hard To Please
+[转]Men Are Hard To Please
 =========
 
 打开mail看见朋友发的一份e-mail，甚是好玩，记录以自省－－如果有必要的话.其中的E文单词也值得一学。
