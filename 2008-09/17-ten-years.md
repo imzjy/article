@@ -12,73 +12,56 @@ Ten Year
 ### 父母 Parents
 
 十年前我们是父母的孩子
-
 10 years ago, we were children of our parents;
 
 十年后我们是孩子的父母
-
 10 years later, we become parents of our children.
 
 十年前我有温暖的家
-
 10 years ago, I had a home full of joys and affection ;
 
 十年后我才体会家的温暖
-
 10 years later, I feel warmth of family then and not till then.
 
 十年前我渴望离家去远方
-
 10 years ago, I yearned for leaving far away from home,
 
 十年后我渴望从远方回家
-
 10 years later, I am longing to return my drifting heart home.
 
 十年前我对父母大吵大嚷
-
 10 years ago, I shouted and thunder at my parents;
 
 十年后我希望父母再骂我一次
-
 10 years later, I wish my parents scold me again even in my dream.
 
 ### 爱情 Love
 
 十年前你是我的同桌
-
 10 years ago, you were my deskmate,
 
 十年后你成了别人的妻子
-
 10 years later, you become the wife of the other guy.
 
 十年前我唱着同桌的你
-
 10 years ago, I sang My Deskmate for you,
 
 十年后我想着同桌的你
-
 10 years later, I am thinking of you my dear deskmate.
 
 十年前我们面对的唯一问题是考试
-
 10 years ago, the only problem we faced was exam,
 
 十年后我们除了考试所有的问题都要面对
-
 10 years later, we have to face all except for exam.
 
 十年前我在你家楼下记住了你嫣然的回眸一笑
-
 10 years ago, I remembered your sweet smile at me at your downstairs;
 
 十年后我在你家楼下看到你训斥孩子的严厉面孔
-
 10 years later, I unwittingly saw you nagging at your child with a stony face at your downstairs.
 
 十年前我渴望马上结婚
-
 10 years ago, I yearned for marriage at every moment;
 
 十年后我渴望再谈一次恋爱
