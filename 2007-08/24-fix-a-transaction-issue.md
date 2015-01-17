@@ -1,5 +1,5 @@
- 一个Transaction问题[ErrorCode: -2147217873]
- ====
+一个Transaction问题[ErrorCode: -2147217873]
+====
 
 昨天小王过来给我一片SN，让我查一下为什么程式老是在刷这一个SN时失败。我接过这一个SN，Debug了一下。发现在追踪到的程式中，一个Insert的语句报错：主键唯一性约束。
 
@@ -56,7 +56,7 @@ namespace ConsoleApplication1
  }
 }
 ```
- 
+
 Error message dump by vs2003:
 
 ```text
