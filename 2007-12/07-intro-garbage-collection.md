@@ -113,12 +113,12 @@ IL_001f:  ret    //至此，也没有办法可以refer to至t对象,t可以被Ga
 为了使Debug版和Release运行结果保持一致，你可以有两个选择：
 
 1. 在Console.ReadLine只后调用t.Dispose(),即取消我最先给出的代码的(1)处的注释。因为t对象在创建之后还要被引用，所以创建的t对象也被作为一个本地参数来保存，生成的IL如下：
-  
+
   `.locals init (class [mscorlib]System.Threading.Timer V_0)`
 
 2. 注释掉我最先给出的代码的(2)处的GC.Collect函数的调用.这样虽然在Release版中t对象已被标识为可回收，但些时没有内存需求(这只是一个假设)，CLR并不会回收t对象.
-  
-  显然方法2是不可取的，我们只把希望寄托在CLR不进行Garbage Collect，但在现实编程中这是不现实的。在t被触发的间隔间谁也不能保证CLR不进行Garbage Collect.若使用方法2我稍改了一下代码，Release版本的程序又不能工作了。
+
+显然方法2是不可取的，我们只把希望寄托在CLR不进行Garbage Collect，但在现实编程中这是不现实的。在t被触发的间隔间谁也不能保证CLR不进行Garbage Collect.若使用方法2我稍改了一下代码，Release版本的程序又不能工作了。
 
 ```csharp
 class Program
