@@ -14,7 +14,7 @@ Observer，观察者模式。它还有个别名叫：发布--订阅.这个别名
 
 现在可以对号入座了，我们消费者就是观察者(Observer).我们观察我们每个月的消费记录。移动公司提供订阅的主题(Subject).我们先来看看Observer以及Subject都能做哪些事情。
 
-Observer-只需(被通知)话费清单已到.
+Observer只需(被通知)话费清单已到.
 
 ```c++
 class Observer
