@@ -23,7 +23,7 @@ WinXp + php-5.2.5-Win32.zip + apache_2.2.8-win32-x86-openssl-0.9.8g.msi
 
 	`LoadModule php5_module "C:/PHP/php5apache2_2.dll"`
 
-	1. b,add parsing support:
+	2. b,add parsing support:
 
 	`AddType application/x-httpd-php .php`
 
