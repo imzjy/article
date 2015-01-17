@@ -19,13 +19,8 @@ WinXp + php-5.2.5-Win32.zip + apache_2.2.8-win32-x86-openssl-0.9.8g.msi
 
 1. open the folder of [conf] within apache install directory, then edit [httpd.conf] file within the folder of [conf].
 
-	1. add the DSO support:
-
-	`LoadModule php5_module "C:/PHP/php5apache2_2.dll"`
-
-	2. b,add parsing support:
-
-	`AddType application/x-httpd-php .php`
+	1. add the DSO support: `LoadModule php5_module "C:/PHP/php5apache2_2.dll"`
+	2. b,add parsing support: `AddType application/x-httpd-php .php`
 
 2. test the apache configuration;
 
@@ -36,7 +31,6 @@ WinXp + php-5.2.5-Win32.zip + apache_2.2.8-win32-x86-openssl-0.9.8g.msi
 2. edit `php.ini` in directory of `C:\Windows`
 
 	1. change `extension_dir='./'`  to `extension_dir='C:/PHP/ext'`;
-
 	2. find section of `[Dynamic Extensions]`, uncomment the `extension=php_gd2.dll`,`extension=php_mbstring.dll`,`extension=php_mysql.dll`
 
 3. copy `libmysql.dll` from `C:\PHP` to `C:\windows\system32`(PHP5 doesn't support MySQL by default,so must copy `libmysql.dll` by hand)
