@@ -9,9 +9,9 @@ WinXp + php-5.2.5-Win32.zip + apache_2.2.8-win32-x86-openssl-0.9.8g.msi
 
 ### Installation:
 
-1. unzip php-5.2.5-Win32.zip, and copy contents to C:\PHP;
+1. unzip `php-5.2.5-Win32.zip`, and copy contents to `C:\PHP`;
 1. install MySQL;
-1. install Apache;[in my computer, I'll choose C:\Apache as install directory]
+1. install Apache; In my computer, I prefer to `C:\Apache` as default installation directory
 
 ### Configuration:
 
