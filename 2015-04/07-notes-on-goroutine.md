@@ -1,4 +1,4 @@
-Goroutine笔记
+goroutine笔记
 ============
 
 ### goroutine没有得到运行？
@@ -105,3 +105,46 @@ func main() {
 #### 让出时间片
 
 go的runtime提供的一个函数`runtime.Gosched`可以让当前的执行体主动让出时间片。
+
+```go
+func main() {
+
+	go func () {
+		fmt.Println("in go routine.")
+	}()
+
+	fmt.Println("in main execution.")
+
+	for {
+		runtime.Gosched()
+		os.Exit(0)
+	}
+}
+```
+
+### 使用多个CPU核心
+
+如果go只是使用单个核心，那么所谓的并发就利用不到当前CPU多核化的优势，即现在的CPU有多个核心，可以同时运行几个执行体。golang的任务调度器当前没有自动化这一步，是一个不大不小的遗憾，过我们可以通过设置让golang的运行时使用CPU多个核心。
+
+`runtime.NumCPU`方法可以让我们得到当前机器的CPU核心数。而`runtime.GOMAXPROCS`方法可以让我们设置当前golang的runtime使用的CPU核心数，也就是使用多个CPU核心，让任务同时执行。
+
+```go
+func main() {
+
+	go func () {
+		fmt.Println("in go routine.")
+	}()
+
+	fmt.Println("in main execution.")
+
+	//increase the cpu number
+	fmt.Printf("Numof CPU:%d\n", runtime.NumCPU())
+	runtime.GOMAXPROCS(runtime.NumCPU())
+
+	for{
+		
+	}
+}
+```
+
+通过上面的示例我们可以看到，当前的CPU执行体虽然被阻塞，但是仍然不影响goroutine的执行。
