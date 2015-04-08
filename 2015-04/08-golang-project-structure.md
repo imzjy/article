@@ -19,22 +19,8 @@ Go语言比较强调工程性，所以Go使用了`约定`的方式来组织文�
 Go使用它自己的工作空间来组织它所有的代码，即所有代码都必须放到某一个Go的工作空间(Workspace)中才能编译链接。这个工作空间使用环境变量`GOPATH`来指定，我们可以使用下面的命令来查看当前的设定。
 
 ```text
-➜  src  go env
-GOARCH="amd64"
-GOBIN=""
-GOCHAR="6"
-GOEXE=""
-GOHOSTARCH="amd64"
-GOHOSTOS="darwin"
-GOOS="darwin"
+➜  src  go env | grep GOPATH
 GOPATH=""
-GORACE=""
-GOROOT="/usr/local/Cellar/go/1.4.2/libexec"
-GOTOOLDIR="/usr/local/Cellar/go/1.4.2/libexec/pkg/tool/darwin_amd64"
-CC="clang"
-GOGCCFLAGS="-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fno-common"
-CXX="clang++"
-CGO_ENABLED="1"
 ```
 
 上面病没有设置Go的工作空间，我们可以使用下面的命令来将当前目前设为Go的工作空间：
@@ -47,8 +33,8 @@ GOPATH="/Users/zjy/work/gowks"
 
 `GOPATH`相当于所有Go项目的根目录，我们再看一下具体的目录组成：
 
-  ```text
-  ➜  gowks  tree -L 3 .
+```text
+➜  gowks  tree -L 3 .
 .
 ├── bin
 │   └── s3cl
@@ -61,7 +47,7 @@ GOPATH="/Users/zjy/work/gowks"
         ├── imzjy
         ├── jessevdk
         └── vaughan0
-  ```
+```
 
 再Go工作空间主要有三个目录组成：
 
