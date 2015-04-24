@@ -158,4 +158,4 @@ https://docs.google.com/drawings/d/1WArrjazS-1cwCoBysHqj4QDJ56oveUhHXSrt4IPp8PY/
 技术选择总体来说是个人偏好，你可以根据自己的需要来设计自己的架构和选择合适的技术。
 
 #### 3.3 聊天程序源代码
-https://github.com/jatsz/chat-app-with-redis
+https://github.com/imzjy/chat-app-with-redis
