@@ -6,6 +6,15 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            width:960px;
+        }
+        #article h1{
+            padding-bottom: 25px;
+            border-bottom: solid 1px silver;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
