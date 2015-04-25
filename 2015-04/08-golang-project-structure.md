@@ -101,3 +101,38 @@ $ go get github.com/imzjy/s3cl
 ```
 
 `s3cl`已经下载编译好，可以直接使用或者修改调试了。
+
+### 后记
+
+真实的项目中，如果都使用一个GOPATH还是有很多不方便的地方，我得解决办法是使用Makefile来构建项目，在Makefile中使用`env`来定义一次性环境变量。
+
+项目结构
+```text
+.
+├── Makefile
+├── README.md
+├── bin
+│   ├── apihelp.txt
+│   ├── apiserver
+│   └── conf
+│       └── app.conf
+├── gowks
+│   └── src
+│       ├── apiserver
+│       ├── github.com
+│       ├── go-carrot
+│       ├── go.net
+├── scripts
+│   ├── redis.conf
+│   └── supervisord.conf
+└── ubuntu_extras.sh
+```
+
+Makefile定义：
+
+```make
+GOPATH  := ${CURDIR}/gowks
+GO      := env GOPATH="${GOPATH}" go
+apiserver: pre
+        ${GO} build apiserver
+```
