@@ -25,8 +25,8 @@ RESTful API中ST指的就是(State Transfer)我们在访问资源的时候带上
 
 JavaScript中又time这个对象，但是JSON中却不支持种对象表示，这也不奇怪Text-Based的东西已经在Unix的世界证明他得有点，我们也不需要多出一种数据类型，而是我们怎么样表示日期这种数据类型。通常的做法也有两种：
 
-- 基于(ISO8601)[!http://en.wikipedia.org/wiki/ISO_8601]
-- 基于Epoch的时间戳(JavaScrpit中得`(new Date()).getTime()`
+- 基于[ISO8601](http://en.wikipedia.org/wiki/ISO_8601)
+- 基于Epoch的时间戳(JavaScrpit中得`(new Date()).getTime()`)
 
 两种方式都可以，ISO8601的方式比较容易阅读有时区的信息，而Epoch的方式在程序间的通用性更高，在JSON中直接使用`number`就可以表示了。我个人倾向于选择第二种，即基于时间戳的方式。反正这些字符都不会直接就用来显示给用户，都需要处理一下，那么选择更加易于处理的Epoch的方式更加方便。
 
