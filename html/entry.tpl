@@ -7,6 +7,9 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        .container {
+            max-width:720px;
+        }
         #article h1{
             padding-bottom: 25px;
             border-bottom: solid 1px silver;
