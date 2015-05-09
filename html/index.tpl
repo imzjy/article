@@ -8,7 +8,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .container {
-            max-width:720px;
+            max-width:768px;
         }
     </style>
 </head>
