@@ -30,10 +30,48 @@ $openssl genrsa -out imzjy.key 2048
 
 ```text
 -----BEGIN RSA PRIVATE KEY-----
-KaTPkW8avFQKx4gtWGNJvxsq+gArY7zDtglkcb1NnR0pb5ZFkr5SuLZvCU2sX+YQ
-Ey8qOrgsCoz9x4fym/gU2H4cPpibGjxDjRRWiytMxXDC5w+ni3MzBcMtOCtiPLEJ
+MIIEpQIBAAKCAQEA6gkOZps1FDvfA9L7C4axPj+CgFmAV70qprVievLizaZ5QbNT
+78ehKgFwBAC48dsWuyC8tNEVghm5Xrs4TXwkOOX7Q3Rm39VsAj1WQSE2Y/Jrd+61
+SgABhiKGxaLNPwbJYc1R5Hj1/qEz061xcXl0iGMRdFC8VvxKM3Tn9w5UZN3qSRF2
+1emAsq9puLpyEQfskjalLJx2iZyR31q7P0V1e7htRWs4wjswqe4oUTyxcxMqv/w4
 --省略了一些--
-MIIEogIBAAKCAQEAxKSYkUAqwzpLvgAzvPjyvp1MFGWk/8EnWkWc60QCs7IzqhEF
+t0PP0u/G3/a6WyKdCYUZWXmYqdqbn9FEDl2/8qvSOH7V2DuVCrHL46Qlc1BG95a2
+IrXo3+eADmH2XH00zvJHU8CjytD7IV2oOQECdO8BV64jfAObK0+W2/psTP7xwISP
+1hy21+XL0f60r59/c5lbtBO1F7Iu8EBHWhPNbvOqW8GzkcI3g08FNzLw/D44d/s3
+MddNRq+vXOg/VhalL+v5MpUSDTX2/n0KxWVTsgJU4gWZzCPT+MY9Vnl+Tj/f1ajq
 -----END RSA PRIVATE KEY-----
 ```
+
+有了私钥以后，我们就可以申请让CA给我们颁发证书，我们需要提供的就是CSR文件。
+
+#### 1.2, 生成CSR文件
+
+我们需要提供给CA的只有一个CSR的文件，我们可以通过刚才生成的私钥(private key)生成对应的CSR，这里的意思其实是说，我们现在有了私钥，我要CA给我颁发一个证书，证明这个私钥是授信的，CA不要知道我们的私钥，他只是证明我们的私钥是可信的。可以通过下面的命令来生成CSR即可：
+
+```shell
+$openssl req -new -key imzjy.key -out imzjy.csr
+```
+
+这里的命令是使用私钥生成CA需要的CSR。这其中我们需要填写我们的一些信息，[信息规范](https://www.sslshopper.com/what-is-a-csr-certificate-signing-request.html)中*最重要*的部分就是CN(common name)，也就是你网站的域名，通常分为两类：一种是类似于`*.imzjy.com`的泛域名，这种认证比较贵，好处是你可以让你的子域名`blog.imzjy.com`都可以使用HTTPS。另一种就是制定单个域名比如`www.imzjy.com`，所有这个域名下得内容都可以使用HTTPS。
+
+生成的CSR文件格式如下：
+
+```text
+-----BEGIN CERTIFICATE REQUEST-----
+5hATLyo6uCwKjP3Hh/Kb+BTYfhw+mJsaPEONFFaLK0zFcMLnD6eLczMFwy04K2I8
+sQmm/feCTxykn/+FK0ZvM97Fpp4Pp3U5py+lXtsJrJ4XENbcKv8JEKftu3xWS7EV
+joqm48oiB9iljiF/xwVoQT/MCaz2JhG0BeCJ7QsRQ774Mw1XxHhobRioIfUnCicb
+--省略了一些内容--
+DyKSssyHuRMkkdfJGUn003lvUynfHxkgM4PPtC/vAgMBAAGgADANBgkqhkiG9w0B
+AQUFAAOCAQEAM7ZLo8LjABvYY/+YCGx0JYq9DSPK18Q8w4htVqNx97QvvDSs9N6X
+-----END CERTIFICATE REQUEST-----
+```
+
+在提交CSR给我们的CA之前，我们可以确认一下我们提交的内容填写是否正确，使用下面的命令可以从CSR中显示我们刚才填写的内容。
+
+```shell
+$openssl req -in imzjy.csr -noout -text
+```
+至此我们的申请准备工作已经做完，接下来可以把CSR发给CA要求CA给我们颁发证书。
+
 
