@@ -110,7 +110,7 @@ server {
 	server_name localhost;
 	
 	root /your/web/root/;
-  index index.html index.htm;
+	index index.html index.htm;
 	
 	ssl on;
 	ssl_certificate /your/crt/file/location/imzjy.crt;
