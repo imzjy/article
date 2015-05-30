@@ -130,4 +130,10 @@ $sudo nginx -t
 $sudo /etc/init.d/nginx restart
 ```
 
-这时以HTTPS打开你的网站，检查HTTPS是否配置成功，绿色的小锁，好帅哦！
+这时以HTTPS打开你的网站，检查HTTPS是否配置成功，绿色的小锁，好帅哦:)
+
+### 2 使用自签发的证书
+
+有的时候我们不想向CA购买证书，我们想颁发自己的证书，该怎么做呢？首先我们要知道CA做了哪些工作。
+
+//to be continue...
