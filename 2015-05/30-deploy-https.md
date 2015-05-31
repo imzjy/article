@@ -152,4 +152,6 @@ $openssl x509 -req -in imzjy.csr -CA CA.crt -CAkey CA.key -CAcreateserial -out i
 
 这样CA就会用自己的证书和私钥利用imzjy.csr创建了一张证书，接下来，CA就可以把自己的证书文件和刚刚创建的imzjy.crt发给客户，客户合并这两个文件后加上自己的私钥就可以部署Web服务器了。
 
+我们使用模仿CA颁发证书部署后的效果如下：
 
+![self signed certification](http://images.cnblogs.com/cnblogs_com/Jerry-Chou/695655/o_self-signed-cert.jpg)
