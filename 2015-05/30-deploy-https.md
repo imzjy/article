@@ -134,6 +134,22 @@ $sudo /etc/init.d/nginx restart
 
 ### 2 使用自签发的证书
 
-有的时候我们不想向CA购买证书，我们想颁发自己的证书，该怎么做呢？首先我们要知道CA做了哪些工作。
+#### 2.1 自颁发证书
 
-//to be continue...
+有的时候我们不想向CA购买证书，我们想颁发自己的证书，该怎么做呢？如果只是测试，不需要CA签署，我们可以简单的这样做：
+
+```shell
+$openssl req -new -x509 -key imzjy.key -out imzjy.crt -days 365
+```
+
+#### 2.2 模仿CA颁发证书
+
+CA有什么？ 申请者CSR(imzjy.csr)，CA的私钥(CA.key)，CA的证件(CA.crt)。 CA可以使用下面的命令来
+
+```shell
+$openssl x509 -req -in imzjy.csr -CA CA.crt -CAkey CA.key -CAcreateserial -out imzjy.crt -days 356
+```
+
+这样CA就会用自己的证书和私钥利用imzjy.csr创建了一张证书，接下来，CA就可以把自己的证书文件和刚刚创建的imzjy.crt发给客户，客户合并这两个文件后加上自己的私钥就可以部署Web服务器了。
+
+
