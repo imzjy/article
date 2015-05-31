@@ -157,7 +157,6 @@ $openssl x509 -req -in imzjy.csr -CA CA.crt -CAkey CA.key -CAcreateserial -out i
 ![self signed certification](http://images.cnblogs.com/cnblogs_com/Jerry-Chou/695655/o_self-signed-cert.jpg)
 
 Reference:
-
-http://tonybai.com/2015/04/30/go-and-https/
-
-http://en.wikipedia.org/wiki/Public_key_infrastructure
+---------
+- http://tonybai.com/2015/04/30/go-and-https/
+- http://en.wikipedia.org/wiki/Public_key_infrastructure
