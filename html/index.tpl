@@ -11,7 +11,7 @@
     <title>人生如戏 - 周继元</title>
     <style type="text/css">
     .article-list li {
-        margin: 10px auto;
+        margin: 5px auto;
     }
     </style>
 </head>

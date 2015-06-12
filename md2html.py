@@ -75,7 +75,8 @@ def generate_index_html(markdown_files):
     article_list = ''
     for full_name in reversed(sorted(markdown_files_in_full_name)):
         article_url = replace_ext(full_name, '.md', '.html')
-        article_list += u'<li><a href="{0}">{1}</a></li>\n'.format(article_url, get_article_title(full_name))
+        article_date = full_name[2:2+10]
+        article_list += u'<li><a href="{0}">{1}</a><small>{2}</small></li>\n'.format(article_url, get_article_title(full_name), article_date)
 
     index_tpl = Template(get_tpl('index.tpl'))
     with codecs.open(os.path.join(OUTPUT_DIR, 'index.html'), 'w+', 'utf-8') as f:
