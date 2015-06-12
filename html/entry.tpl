@@ -8,6 +8,15 @@
     <link href="//cdn.staticfile.org/twitter-bootstrap/3.3.1/css/bootstrap.css" rel="stylesheet">
     <link href="//cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
     <link href="//cdn.staticfile.org/fontdiao/0.0.8/css/fontdiao.css" rel="stylesheet">
+    <style type="text/css">
+        h1 {
+            padding-bottom: 25px;
+        }
+        footer {
+            border-top: 1px solid gray;
+            padding-top: 20px;
+        }
+    </style>
     <title>人生如戏 - 周继元</title>
 </head>
 
