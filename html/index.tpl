@@ -9,6 +9,11 @@
     <link href="//cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
     <link href="//cdn.staticfile.org/fontdiao/0.0.8/css/fontdiao.css" rel="stylesheet">
     <title>人生如戏 - 周继元</title>
+    <style type="text/css">
+    .article-list li {
+        margin: 10px auto;
+    }
+    </style>
 </head>
 
 <body>
@@ -22,7 +27,7 @@
 
                 <section>
                     <div>
-                        <ul>
+                        <ul class="article-list list-unstyled">
                             ${aritcle_list}
                         </ul>
                     </div>
