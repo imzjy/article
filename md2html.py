@@ -65,7 +65,7 @@ def markdown_to_html(markdown_files):
             
             md_text = src.read()
             article_html = markdown.markdown(md_text, extensions=['markdown.extensions.fenced_code'])
-            dest.write(entry_tpl.substitute(article=article_html))
+            dest.write(entry_tpl.substitute(article=article_html, title=get_article_title(src_full_name)))
             # print html_text
 
 def generate_index_html(markdown_files):

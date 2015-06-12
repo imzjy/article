@@ -8,10 +8,14 @@
     <link href="//cdn.staticfile.org/twitter-bootstrap/3.3.1/css/bootstrap.css" rel="stylesheet">
     <link href="//cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
     <link href="//cdn.staticfile.org/fontdiao/0.0.8/css/fontdiao.css" rel="stylesheet">
-    <title>人生如戏 - 周继元</title>
+    <title>博客文章 - 周继元</title>
     <style type="text/css">
     .article-list li {
-        margin: 5px auto;
+        margin-bottom: 15px;
+    }
+    .article-list small {
+        color: silver;
+        margin-left: 10px;
     }
     </style>
 </head>

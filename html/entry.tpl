@@ -17,7 +17,7 @@
             padding-top: 20px;
         }
     </style>
-    <title>人生如戏 - 周继元</title>
+    <title>${title} - 周继元</title>
 </head>
 
 <body>
