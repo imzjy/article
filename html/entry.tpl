@@ -10,10 +10,11 @@
     <link href="//cdn.staticfile.org/fontdiao/0.0.8/css/fontdiao.css" rel="stylesheet">
     <style type="text/css">
         h1 {
-            padding-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid silver;
         }
         footer {
-            border-top: 1px solid gray;
+            border-top: 1px dotted gray;
             padding-top: 20px;
         }
     </style>
