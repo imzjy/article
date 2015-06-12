@@ -10,7 +10,8 @@
     <link href="//cdn.staticfile.org/fontdiao/0.0.8/css/fontdiao.css" rel="stylesheet">
     <style type="text/css">
         h1 {
-            margin-bottom: 20px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
             border-bottom: 1px solid silver;
         }
         footer {
