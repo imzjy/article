@@ -72,7 +72,7 @@
                             </a>
                         </li>
                         <li class="pull-right fa-lg">
-                            <span>imjatsz@2015</span>
+                            <span>zjy@2015</span>
                         </li>
                     </ul>
                 </footer>
