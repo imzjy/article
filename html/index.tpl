@@ -10,6 +10,9 @@
     <link href="//cdn.staticfile.org/fontdiao/0.0.8/css/fontdiao.css" rel="stylesheet">
     <title>博客文章 - 周继元</title>
     <style type="text/css">
+    body {
+        font-size: 16px;
+    }
     .article-list li {
         margin-bottom: 15px;
     }
