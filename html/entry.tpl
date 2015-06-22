@@ -72,5 +72,8 @@
             </div>
         </div>
     </div>
+    <link rel="stylesheet" href="//cdn.staticfile.org/highlight.js/8.3/styles/github.min.css">
+    <script type="text/javascript" src="//cdn.staticfile.org/highlight.js/8.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
