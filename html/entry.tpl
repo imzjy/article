@@ -72,8 +72,5 @@
             </div>
         </div>
     </div>
-    <link rel="stylesheet" href="http://cdn.staticfile.org/highlight.js/8.3/styles/monokai_sublime.min.css">
-    <script type="text/javascript" src="http://cdn.staticfile.org/highlight.js/8.3/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
