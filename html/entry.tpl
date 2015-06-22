@@ -8,6 +8,9 @@
     <link href="//cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
     <link href="//cdn.staticfile.org/fontdiao/0.0.8/css/fontdiao.css" rel="stylesheet">
     <style type="text/css">
+        body {
+            font-size: 16px;
+        }
         h1 {
             padding-bottom: 10px;
             margin-bottom: 10px;
