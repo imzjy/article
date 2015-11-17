@@ -4,12 +4,16 @@
 import os
 import re
 import codecs
-import markdown
+import datetime
 from string import Template
 
+import markdown
+from rfeed import Item, Guid, Feed
+
 # globals
-CURPATH = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_DIR = os.path.join(CURPATH, 'html')
+BASE_URL = "http://blog.imzjy.com/"
+SCRIPT_PATH = os.path.dirname(os.path.abspath(__file__))
+HTML_DIR = os.path.join(SCRIPT_PATH, 'html')
 
 class ExtNotFoundException(Exception):
     pass     
@@ -21,7 +25,7 @@ def replace_ext(path, old_ext, new_ext):
         raise ExtNotFoundException()
 
 def get_tpl(tpl_name):
-    with codecs.open(os.path.join(OUTPUT_DIR, tpl_name), 'r', 'utf-8') as f:
+    with codecs.open(os.path.join(HTML_DIR, tpl_name), 'r', 'utf-8') as f:
         index_tpl = f.read()
         return (index_tpl or 'no content').strip()
 
@@ -46,27 +50,55 @@ def get_article_title(article_md_file):
 
 def markdown_to_html(markdown_files):
 
-    entry_tpl = Template(get_tpl('entry.tpl'))
+    rssEntries = []
 
+    entry_tpl = Template(get_tpl('entry.tpl'))
     for path, name in markdown_files:
 
         #create folder
-        dest_folder = os.path.join(OUTPUT_DIR, path)
+        dest_folder = os.path.join(HTML_DIR, path)
         # print dest_folder
         if not os.path.exists(dest_folder):
             os.mkdir(dest_folder)
 
         #convert
-        src_full_name = os.path.join(path, name)
-        print 'processing:' + src_full_name
-        dest_full_name = replace_ext(os.path.join(dest_folder, name), '.md', '.html')
-        with codecs.open(src_full_name, mode='r', encoding="utf-8") as src, \
-            codecs.open(dest_full_name, 'w', 'utf-8') as dest:
+        md_full_name = os.path.join(path, name)
+        article_title = get_article_title(md_full_name)
+        article_url = os.path.join(BASE_URL, replace_ext(md_full_name, '.md', '.html'))
+        print 'processing:' + md_full_name
+        html_full_name = replace_ext(os.path.join(dest_folder, name), '.md', '.html')
+        with codecs.open(md_full_name, mode='r', encoding="utf-8") as src, \
+            codecs.open(html_full_name, 'w', 'utf-8') as html:
             
             md_text = src.read()
             article_html = markdown.markdown(md_text, extensions=['markdown.extensions.fenced_code'])
-            dest.write(entry_tpl.substitute(article=article_html, title=get_article_title(src_full_name)))
-            # print html_text
+            html.write(entry_tpl.substitute(article=article_html, title=article_title))
+        
+        # RSS Feed Entry
+        date_groups = re.search(r'(\d{4})-(\d{2})/(\d{2})-\S*\.md$', md_full_name).groups()
+        pubDate = datetime.datetime(int(date_groups[0]), int(date_groups[1]), int(date_groups[2]), 10, 00)
+
+        rssEntry = Item(
+            title = article_title,
+            link = article_url, 
+            description = "This is the description of the first article",
+            author = "Jerry Chou",
+            guid = Guid(article_url),
+            pubDate = pubDate)
+        rssEntries.append(rssEntry)
+
+
+    # Generate RSS Feed
+    feed = Feed(
+        title = "人生如戏",
+        link =  os.path.join(BASE_URL, "rss.xml"),
+        description = "周继元的博客",
+        language = "zh-CN",
+        lastBuildDate = datetime.datetime.now(),
+        items = rssEntries)
+
+    with codecs.open(os.path.join(HTML_DIR, "rss.xml"), 'w+', 'utf-8') as rss:
+        rss.write(feed.rss().decode('utf-8'))
 
 def generate_index_html(markdown_files):
 
@@ -79,7 +111,7 @@ def generate_index_html(markdown_files):
         article_list += u'<li><a href="{0}">{1}</a><small>{2}</small></li>\n'.format(article_url, get_article_title(full_name), article_date)
 
     index_tpl = Template(get_tpl('index.tpl'))
-    with codecs.open(os.path.join(OUTPUT_DIR, 'index.html'), 'w+', 'utf-8') as f:
+    with codecs.open(os.path.join(HTML_DIR, 'index.html'), 'w+', 'utf-8') as f:
         f.write(index_tpl.substitute(aritcle_list=article_list))
 
 
