@@ -65,6 +65,7 @@ def markdown_to_html(markdown_files):
         md_full_name = os.path.join(path, name)
         article_title = get_article_title(md_full_name)
         article_url = os.path.join(BASE_URL, replace_ext(md_full_name, '.md', '.html'))
+        article_html = ''
         print 'processing:' + md_full_name
         html_full_name = replace_ext(os.path.join(dest_folder, name), '.md', '.html')
         with codecs.open(md_full_name, mode='r', encoding="utf-8") as src, \
@@ -81,7 +82,7 @@ def markdown_to_html(markdown_files):
         rssEntry = Item(
             title = article_title,
             link = article_url, 
-            description = "This is the description of the first article",
+            description = article_html,
             author = "Jerry Chou",
             guid = Guid(article_url),
             pubDate = pubDate)

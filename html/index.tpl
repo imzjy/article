@@ -16,6 +16,10 @@
         color: silver;
         margin-left: 10px;
     }
+    .rss {
+        font-size: 16px;
+        margin-top: 20px;
+    }
     </style>
 </head>
 
@@ -25,7 +29,7 @@
             <div class="col-md-offset-2 col-md-8">
 
                 <header class="page-header">
-                    <h1>周继元的博客</h1>
+                    <h1>周继元的博客 <small class="pull-right rss"><a href="/rss.xml" target="_blank">RSS</a></small> </h1>
                 </header>
 
                 <section>
