@@ -99,9 +99,9 @@ def generate_rss(markdown_files):
     
     # Generate RSS Feed
     feed = Feed(
-        title = "人生如戏",
+        title = "佛与编程 - 周继元的博客",
         link =  os.path.join(BASE_URL, "rss.xml"),
-        description = "周继元的博客",
+        description = "佛与编程 - 周继元的博客",
         language = "zh-CN",
         lastBuildDate = datetime.datetime.now(),
         items = rssEntries)
