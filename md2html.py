@@ -50,21 +50,17 @@ def get_article_title(article_md_file):
 
 def markdown_to_html(markdown_files):
 
-    rssEntries = []
-
     entry_tpl = Template(get_tpl('entry.tpl'))
     for path, name in markdown_files:
 
         #create folder
         dest_folder = os.path.join(HTML_DIR, path)
-        # print dest_folder
         if not os.path.exists(dest_folder):
             os.mkdir(dest_folder)
 
         #convert
         md_full_name = os.path.join(path, name)
         article_title = get_article_title(md_full_name)
-        article_url = os.path.join(BASE_URL, replace_ext(md_full_name, '.md', '.html'))
         print 'processing:' + md_full_name
         html_full_name = replace_ext(os.path.join(dest_folder, name), '.md', '.html')
         with codecs.open(md_full_name, mode='r', encoding="utf-8") as src, \
@@ -73,21 +69,34 @@ def markdown_to_html(markdown_files):
             md_text = src.read()
             article_html = markdown.markdown(md_text, extensions=['markdown.extensions.fenced_code'])
             html.write(entry_tpl.substitute(article=article_html, title=article_title))
-        
-        # RSS Feed Entry
-        date_groups = re.search(r'(\d{4})-(\d{2})/(\d{2})-\S*\.md$', md_full_name).groups()
-        pubDate = datetime.datetime(int(date_groups[0]), int(date_groups[1]), int(date_groups[2]), 10, 00)
-
-        rssEntry = Item(
-            title = article_title,
-            link = article_url, 
-            description = article_title,
-            author = "Jerry Chou",
-            guid = Guid(article_url),
-            pubDate = pubDate)
-        rssEntries.append(rssEntry)
 
 
+def generate_rss(markdown_files):
+
+    rssEntries = []
+
+    for path, name in markdown_files[:20]:
+
+        md_full_name = os.path.join(path, name)
+        article_title = get_article_title(md_full_name)
+        article_url = os.path.join(BASE_URL, replace_ext(md_full_name, '.md', '.html'))
+        with codecs.open(md_full_name, mode='r', encoding="utf-8") as src:
+            md_text = src.read()
+            article_html = markdown.markdown(md_text, extensions=['markdown.extensions.fenced_code'])
+
+            # RSS Feed Entry
+            date_groups = re.search(r'(\d{4})-(\d{2})/(\d{2})-\S*\.md$', md_full_name).groups()
+            pubDate = datetime.datetime(int(date_groups[0]), int(date_groups[1]), int(date_groups[2]), 10, 00)
+
+            rssEntry = Item(
+                title = article_title,
+                link = article_url, 
+                description = article_html,
+                author = "Jerry Chou",
+                guid = Guid(article_url),
+                pubDate = pubDate)
+            rssEntries.append(rssEntry)
+    
     # Generate RSS Feed
     feed = Feed(
         title = "人生如戏",
@@ -100,12 +109,13 @@ def markdown_to_html(markdown_files):
     with codecs.open(os.path.join(HTML_DIR, "rss.xml"), 'w+', 'utf-8') as rss:
         rss.write(feed.rss().decode('utf-8'))
 
+
 def generate_index_html(markdown_files):
 
     markdown_files_in_full_name = [os.path.join(d, f) for d, f in markdown_files]
 
     article_list = ''
-    for full_name in reversed(sorted(markdown_files_in_full_name)):
+    for full_name in markdown_files_in_full_name:
         article_url = replace_ext(full_name, '.md', '.html')
         article_date = full_name[2:2+10]
         article_list += u'<li><a href="{0}">{1}</a><small>{2}</small></li>\n'.format(article_url, get_article_title(full_name), article_date)
@@ -116,9 +126,10 @@ def generate_index_html(markdown_files):
 
 
 def main():
-    markdown_files = get_markdown_files()
+    markdown_files = list(reversed(sorted(get_markdown_files())))
 
     markdown_to_html(markdown_files)
+    generate_rss(markdown_files)
     generate_index_html(markdown_files) 
 
 
