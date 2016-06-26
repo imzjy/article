@@ -58,3 +58,19 @@
 ### 总结
 
 上拉电阻和下拉电阻是防止短路，同时因为电阻的存在让输入不可能直接到GND，从而：1，不会短路。2，使得in端有稳定(固定)的输入。
+
+通常板卡中已经集成了上拉和下拉电阻，可以通过设置pin的工作状态来打开或者关闭pin的集成上拉电阻或者下拉电阻，比如Arduino集成了上拉电阻，可以通过下面的代码来设置：
+
+```c
+void setup(){
+  pinMode(2, INPUT_PULLUP);
+}
+```
+
+而树莓派同时集成了上拉电阻和下拉电阻，可以同过下面代码来设置下拉电阻（下拉电阻通常更符合直觉，即开关闭合状态1，关闭状态0）：
+
+```python
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(8, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+```
