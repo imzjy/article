@@ -19,3 +19,5 @@
 
 当switch闭合的时候，5v电压经过一个resistor，直接短接到GND，这时候in的状态是低电平。换个说法就是：
 > swith close == low input
+
+当我们没有这个电阻（pull up resistor）会发生什么？当开关是open的时候5v电压直接连到in，这时候是in是高电平或者短路。如果开关闭合，那么直接5v到GND造成短路。
