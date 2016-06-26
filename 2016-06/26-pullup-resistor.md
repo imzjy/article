@@ -20,4 +20,30 @@
 当switch闭合的时候，5v电压经过一个resistor，直接短接到GND，这时候in的状态是低电平。换个说法就是：
 > swith close == low input
 
-当我们没有这个电阻（pull up resistor）会发生什么？当开关是open的时候5v电压直接连到in，这时候是in是高电平或者短路。如果开关闭合，那么直接5v到GND造成短路。
+当我们没有这个电阻（pull up resistor）会发生什么？
+
+当开关是open的时候5v电压直接连到in，这时候是in是高电平或者短路。如果开关闭合，那么直接5v到GND造成短路。也就是说没有这个电阻这个电路就是有问题的，不稳定的。
+
+### 下拉电阻
+
+下拉电阻(pushdown resistor)刚好和上拉电阻相反，它的作用是将输入in保持在低电平。看看电路图：
+
+```text
+[5v]-----[switch]------------------[in]
+                          |
+                 [push down resistor]
+                          |
+                        [GND]
+```
+
+当开关open的时候，in没有任何电压输入，所以状态是电平：
+> switch open == low input
+
+当开关是close闭合状态时，5v电压因为电阻的牵制，不会直接到GND，而是作为in的输入，当前in的状态为高电平：
+> switch close == high input
+
+当我们拿掉下拉电阻会发生什么呢？如果开关open，断路，in没有任何输入。而开关close呢，短路直接到GND，in仍然没有输入。
+
+### 总结
+
+上拉电阻和下拉电阻是防止短路，同时因为电阻的存在让输入不可能直接到GND，从而：1，不会短路。2，使得in端有稳定(固定)的输入。
