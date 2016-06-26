@@ -10,7 +10,8 @@
 ```text
 [5v]-----[switch]------[in]
 ```
-行，但是不会得到你想要的结果。当开关闭合时候，这时候没有问题，in会得到固定的高电平。但是当开关打开的时候，in会受到外界环境因素的影响，会有很小的电流输入，时而有电流输入变成高电平，时而没有电流输入变成低电平，这就是我们说的floating状态，这是一种不稳定状态。
+行，但是不会得到你想要的结果。当开关闭合时候，这时候没有问题，in会得到固定的高电平。但是当开关打开的时候，in会受到外界环境因素的影响，会有很小的电流输入，时而有电流输入变成高电平，时而没有电流输入变成低电平，这就是我们说的floating状态，这是一种不稳定状态。 floating发生的原因：
+> What you have is called a Floating pin. Digital Input pins are very sensitive to change, and unless positively driven to one state or another (High or Low), will pick up stray capacitance from nearby sources, like breadboards, human fingers, or even the air. Any wire connected to it will act like a little antenna and cause the input state to change. 
 
 
 ### 上拉电阻
